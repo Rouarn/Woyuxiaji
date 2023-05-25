@@ -1,0 +1,66 @@
+canvas {
+  position: absolute;
+  z-index: 99;
+  pointer-events: none;
+}
+/* 此间为屏幕宽度小于768px是所应用的元素属性 */
+@media (max-width: 768px) {
+  canvas {
+    display: none;
+  }
+}
+/* .CBSakura {
+  position: absolute;
+  z-index: 99;
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: -150px;
+  cursor: pointer;
+  background: linear-gradient(
+    125deg,
+    #2c3e50,
+    #27ae60,
+    #2980b9,
+    #e74c3c,
+    #8e44ad
+  );
+}
+.CBSakura span:nth-child(1) {
+  width: 150px;
+  text-align: center;
+}
+.CBSakura span:nth-child(2) {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  border-left: 1px solid #000; 
+} */
+
+/* .CBSakura:hover {
+  animation: CBSakura 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes CBSakura {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(150px);
+  }
+} */
+.CBSakura {
+  color: #fff;
+  /* 字间距 */
+  letter-spacing: 8px;
+}
+/* .closeSakura {
+  line-height: 50px;
+} */

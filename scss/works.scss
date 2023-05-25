@@ -1,0 +1,123 @@
+.works {
+  position: relative;
+  top: 100%;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: #f5f5f5;
+  h3 {
+    font-size: 30px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .workList {
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+    left: 10%;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+    .workLink {
+      width: 300px;
+      height: 250px;
+      margin: 0 15px 30px 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.03) 0 5px 10px;
+      text-align: left;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.7s transform;
+      transform: translateY(20px);
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.5) 0 5px 20px;
+        transform: scale(1.1);
+      }
+
+      .workLinkPic {
+        height: 155px;
+        // 未配置时的默认图片
+        background: url("../img/workLinkPic.jpg") no-repeat;
+      }
+
+      #workLinkPic1 {
+        background: url("../img/workLinkPic1.jpg") no-repeat;
+      }
+      #workLinkPic2 {
+        background: url("../img/workLinkPic2.jpg") no-repeat;
+      }
+      #workLinkPic3 {
+        background: url("../img/workLinkPic3.jpg") no-repeat;
+      }
+      #workLinkPic4 {
+        background-size: auto 50% !important;
+        background: url("../img/workLinkPic4.png") no-repeat;
+      }
+      #workLinkPic5 {
+        background-size: auto 50% !important;
+        background: url("../img/workLinkPic4.png") no-repeat;
+      }
+      #workLinkPic6 {
+        background: url("../img/workLinkPic6.png") no-repeat;
+      }
+      #workLinkPic7 {
+        background: url("../img/workLinkPic7.jpg") no-repeat;
+      }
+      #workLinkPic8 {
+        background-size: auto 50% !important;
+        background: url("../img/workLinkPic8.svg") no-repeat;
+      }
+      #workLinkPic9 {
+        background-size: auto 50% !important;
+        background: url("../img/workLinkPic9.svg") no-repeat;
+      }
+
+      #workLinkPic1,
+      #workLinkPic1,
+      #workLinkPic2,
+      #workLinkPic3,
+      #workLinkPic4,
+      #workLinkPic5,
+      #workLinkPic6,
+      #workLinkPic7,
+      #workLinkPic8,
+      #workLinkPic9 {
+        height: 155px;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .workLinkText {
+        padding: 10px 20px;
+        .workLinkTitle {
+          display: block;
+          margin: 5px 0 0;
+          color: #000000;
+          font-size: 16px;
+          font-weight: 700;
+        }
+        .workLinkIntro {
+          margin: 1px 0 0;
+          color: #000;
+          font-size: small;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .workLinkCat {
+          margin: 9px 0 0;
+          font-size: 12px;
+          color: #000;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+body { margin:0 auto; font-size:12px; font-family:Verdana; line-height:1.5;}
+ul,dl,dt,dd,h1,h2,h3,h4,h5,h6,form { padding:0; margin:0;}
+ul { list-style:none;}
+img { border:0px;}
+a { color:#05a; text-decoration:none;}
+a:hover { color:#f00;}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin:0;
+	padding:0;
+}
+body {
+	margin:0 auto;
+	padding:0;
+}
+body, button, input, select, textarea {
+	font:12px/1.5 tahoma, arial, Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+}
+ol, ul, li, dl, dd, dt {
+	list-style:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.fl {
+	float:left;
+}
+.fr {
+	float:right;
+}
+.cb {
+	clear:both;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:none;
+}
+a {
+	color:#000;
+}
+fieldset, img {
+	border:0;
+}
+button, input, select, textarea {
+	font-size:100%;
+}
+
+
+增强SEO的div+css命名规则
+页头：header
+登录条：loginBar
+标志：logo
+侧栏：sideBar
+广告：banner
+导航：nav
+子导航：subNav
+菜单：menu
+子菜单：subMenu
+搜索：search
+滚动：scroll
+页面主体：main
+内容：content
+标签页：tab
+文章列表：list
+提示信息：msg
+小技巧：tips
+栏目标题：title
+加入：joinus
+指南：guild
+服务：service
+热点：hot
+新闻：news
+下载：download
+注册：register
+状态：status
+按钮：btn
+投票：vote
+合作伙伴：partner
+友情链接：friendLink
+页脚：footer
+版权：copyRight
+
+1.css ID 的命名
+外　套：　　wrap
+主导航：　　mainNav
+子导航：　　subnav
+页　脚：　　footer
+整个页面：　content
+页　眉：　　header
+页　脚：　　footer
+商　标：　　label
+标　题：　　title
+主导航：　　mainNav（globalNav）
+顶导航：　　topnav
+边导航：　　sidebar
+左导航：　　leftsideBar
+右导航：　　rightsideBar
+旗　志：　　logo
+标　语：　　banner
+菜单内容1： menu1Content
+菜单容量：　menuContainer
+子菜单：　　submenu
+边导航图标：sidebarIcon
+注释：　　　note
+面包屑：　　breadCrumb(即页面所处位置导航提示）
+容器：　　　container
+内容：　　　content
+搜索：　　　search
+登陆：　　　login
+功能区：　　shop(如购物车，收银台)
+当前的　　　current
+
+2.另外在编辑样式表时可用的注释可这样写：
+<– Footer –>
+内容区
+<– End Footer –>
+
+3.样式文件命名
+主要的 master.css
+布局，版面 layout.css
+专栏 columns.css
+文字 font.css
+打印样式 print.css
+主题 themes.css

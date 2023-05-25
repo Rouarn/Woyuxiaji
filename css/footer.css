@@ -1,0 +1,122 @@
+@charset "UTF-8";
+footer {
+  position: relative;
+  top: 100%;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  text-align: center;
+  background: url("../img/footer_background01.jpg");
+  background-repeat: no-repeat;
+  -o-background-size: 100% 100%;
+     background-size: 100% 100%;
+}
+footer div {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  padding: 2px 50px;
+}
+footer div p {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 10px;
+  color: #fff;
+}
+footer div a {
+  position: relative;
+  border-bottom: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+footer .copyright {
+  position: relative;
+}
+footer .copyright .legalText .beian {
+  position: relative;
+  right: 30px;
+}
+footer .copyright .legalText .beian img {
+  vertical-align: middle;
+}
+footer .copyright a {
+  color: rgba(255, 255, 255, 0.5);
+}
+footer .statement {
+  display: none;
+}
+
+/* 此间为屏幕宽度小于768px时所应用的元素属性 */
+@media (max-width: 768px) {
+  footer {
+    padding-bottom: 50px;
+  }
+  footer .footbox {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 412px;
+    height: 100px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  footer .footbox p {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 10px;
+    color: #fff;
+  }
+  footer .footbox a {
+    possition: relative;
+    border-bottom: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  footer .copyright {
+    -webkit-transform: translateY(-121px);
+       -moz-transform: translateY(-121px);
+        -ms-transform: translateY(-121px);
+         -o-transform: translateY(-121px);
+            transform: translateY(-121px);
+    float: right;
+    left: 25px;
+  }
+  footer .copyright .legalText .beian img {
+    vertical-align: middle;
+  }
+}
+@media (max-width: 400px) {
+  footer {
+    position: relative;
+    top: 100%;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+  }
+  footer .footbox {
+    display: none;
+  }
+  footer .copyright {
+    position: absolute;
+    top: 188px;
+    left: 20%;
+  }
+}
+@media (min-width: 770px) and (max-width: 910px) {
+  .copyright {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 700px) and (max-width: 770px) {
+  footer .footbox:nth-child(2) {
+    -webkit-transform: translateY(-136px);
+       -moz-transform: translateY(-136px);
+        -ms-transform: translateY(-136px);
+         -o-transform: translateY(-136px);
+            transform: translateY(-136px);
+  }
+}

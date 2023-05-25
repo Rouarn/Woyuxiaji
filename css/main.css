@@ -1,0 +1,627 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "楷体";
+  scroll-behavior: smooth;
+}
+
+/* 右键滑动选择时的样式 */
+*::selection {
+  /* background-color: #ff5d4a; */
+  /* background-color: #38c92f; */
+  background-color: rgba(56, 201, 47, 0.3);
+  color: #fff;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*---滚动条默认显示样式--*/
+::-webkit-scrollbar-thumb {
+  background-color: #018ee8;
+  height: 50px;
+  outline-offset: -2px;
+  outline: 2px solid #fff;
+  -webkit-border-radius: 4px;
+  border: 2px solid #fff;
+}
+
+/*---鼠标点击滚动条显示样式--*/
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fb4446;
+  height: 50px;
+  -webkit-border-radius: 4px;
+}
+
+/*---滚动条大小--*/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/*---滚动框背景样式--*/
+::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+  -webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:active {
+  height: 50px;
+  background-color: greenyellow;
+  -webkit-border-radius: 4px;
+}
+
+.woyuxiaji {
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  /*自动找高*/
+}
+
+.topBg {
+  z-index: -100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: url("../img/background30.jpg"); */
+  background: url("https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN");
+  /* background: url("https://www.yangshangzhen.com/bing/wallpaper") no-repeat; //必应每日 */
+  /* background: url("https://api.dujin.org/bing/1920.php") no-repeat; //必应每日 */
+  /* background: url("https://api.ixiaowai.cn/gqapi/gqapi.php") no-repeat; //随机风景 */
+  /* background: url("https://api.ixiaowai.cn/api/api.php") no-repeat; //随机动漫 */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: topBg 1.5s;
+  animation-fill-mode: forwards;
+  overflow-x: hidden;
+}
+
+/* 必应壁纸API调用方法
+返回API图片:			https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN
+API地址: 				https://bing.biturl.top
+调用方式: 				HTTP GET
+
+相关参数
+resolution 壁纸的分辨率 1920 为默认值, 你也可以将其设置为 1366
+format API的调用返回格式, 值可以为 json 或者 image. 如果返回格式设置为 image, API会直接跳转请求到对应的图片地址.
+index 壁纸的		index		下标，默认从		0		开始。由于Bing壁纸的图片每日更新，所以通过index值可以获取之前的图片,正数为前一天。
+mkt Bing壁纸的地区参数，默认为 zh-CN, 你也可以将其设置为 en-US, ja-JP, en-AU, en-UK, de-DE, en-NZ, en-CA。
+调用示例
+API请求
+https://bing.biturl.top/?resolution=1920&format=json&index=0&mkt=zh-CN
+返回 :
+ {"start_date":"20221212","end_date":"20221213","url":"https://www.bing.com/th?id=OHR.InstagramHallstatt_ZH-CN5309282641_1920x1080.jpg","copyright":"哈尔施塔特，奥地利 (© Jon Arnold Images Ltd/Alamy)","copyright_link":"https://www.bing.com/search?q=%E5%93%88%E5%B0%94%E6%96%BD%E5%A1%94%E7%89%B9\u0026form=hpcapt\u0026mkt=zh-cn"}
+ */
+
+@keyframes topBg {
+  from {
+    background-position: 100% 100%;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+.topBgMask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 31%;
+  height: 100%;
+  z-index: -95;
+}
+
+.shouye {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* nav {
+	position: sticky;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 90px;
+	z-index: 100;
+}
+ */
+.center {
+  width: 80%;
+  height: 82px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navLogoBox {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-size: 0;
+  transition: 0.25s;
+  width: 150px;
+  height: 50px;
+}
+
+.navLogoMain {
+  width: 50px;
+  background: url("../img/Logo_Main_2108.svg");
+  display: inline-block;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+}
+
+.navLogoText {
+  width: 100px;
+  height: 50px;
+  background: url("../img/Logo_Text_2108.svg");
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+}
+
+.navLinkBox {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 466px;
+  height: 50px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 此间为屏幕宽度小于768px是所应用的元素属性 */
+@media (max-width: 768px) {
+  .navLinkBox {
+    display: none;
+  }
+
+  .navLinkMarkBtn1 {
+    z-index: 98;
+    display: block;
+    transition: 0.01s;
+  }
+}
+
+/* 此间为屏幕宽度大于768px是所应用的元素属性 */
+@media (min-width: 768px) {
+  .navLinkMarkBtn1 {
+    z-index: -98;
+    display: none;
+  }
+
+  .navLinkMarkBtn2 {
+    z-index: 99;
+    display: none;
+  }
+
+  .topBgMask {
+    z-index: -95;
+    display: none;
+  }
+
+  .navLinkMarkBox {
+    display: none;
+  }
+
+  .navLinkMarkBtn1,
+  .navLinkMarkBtn2 {
+    visibility: hidden;
+  }
+
+  .navLinkMarkBtn1::before,
+  .navLinkMarkBtn2::before {
+    display: none;
+  }
+}
+
+.navLinkMarkBtn1 {
+  z-index: 10;
+  right: 25px;
+}
+
+.navLinkMarkBtn2 {
+  z-index: 11;
+  display: none;
+  right: 64px;
+  animation: btnVanish 1s 1s;
+  transform: translateY(4px);
+}
+
+.navLinkMarkBtn1,
+.navLinkMarkBtn2 {
+  position: absolute;
+  top: 31.5px;
+  width: 25px;
+  height: 2px;
+  padding: 6px 0;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  box-sizing: unset;
+  background-clip: content-box;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.navLinkMarkBtn1::before,
+.navLinkMarkBtn2::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 0px;
+  width: 25px;
+  height: 2px;
+  border-bottom: 2px solid #fff;
+  box-sizing: unset;
+  background-clip: content-box;
+  cursor: pointer;
+
+  /* 解决为元素遮挡元素本身使用点击事件的办法： */
+  /* 1.元素本身：pointer-events: none;禁用点击事件,
+	其伪元素通过pointer-events: auto;启用点击事件，使鼠标只能点击到伪元素 */
+  /* 此处为 伪元素通过pointer-events: none;禁用点击事件，使被遮挡的元素可以使用点击事件*/
+  pointer-events: none;
+}
+
+.navLinkMarkBox {
+  width: 70%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 80px 10px;
+  display: none;
+}
+
+.navLinkMark {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  /* 粉红牛牛 */
+  background: url("../img/bg_navLinkMark_2213.jpg") no-repeat;
+  /* background: url("https://api.ixiaowai.cn/api/api.php") no-repeat; //随机动漫 */
+  /* background: url("https://api.dujin.org/bing/1920.php") no-repeat; //必应每日 */
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: move 1s;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(300px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btnVanish {
+  from {
+    box-shadow: inset 0 0 75px 75px slategray, 0 0 0 slategray;
+  }
+
+  to {
+    box-shadow: inset 0 0 35px 35px transparent, 0 0 75px 50px transparent;
+  }
+}
+
+@keyframes beforeVanish {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 此上间为屏幕宽度小于750px是所应用的元素属性 */
+
+.navLink {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+}
+
+#navLink5 {
+  width: 70px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+#darkColor,
+#darkColor2 {
+  display: none;
+}
+
+.lightColor,
+.darkColor {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.lightColor > div {
+  /* width: 16px;
+	height: 16px; */
+  /* background-image: url(../img/brightness-high.svg); */
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/TB-Tom-sun.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  position: absolute;
+  /* top: 33%; */
+  /* right: 40%; */
+  top: 18%;
+  right: 30%;
+}
+
+.darkColor > div {
+  /* 	width: 16px;
+	height: 16px; */
+  /* background-image: url(../img/brightness-high-fill.svg); */
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/TB-Jerry-moon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  position: absolute;
+  /* top: 33%; */
+  /* right: 40%; */
+  top: 18%;
+  right: 30%;
+}
+
+.navLink::before {
+  content: "";
+  width: 23px;
+  height: 3px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.7);
+  position: absolute;
+  left: 24px;
+  bottom: 2px;
+  display: none;
+}
+
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+.navLink:hover:before {
+  display: block;
+}
+
+.topTitle {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.topTitlebox {
+  width: 1000px;
+  height: 200px;
+  z-index: -1;
+}
+
+.topTitle h1 {
+  font-weight: 400;
+  font-size: 76px;
+  color: #fff;
+}
+
+.underLinebox {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.underLine {
+  display: block;
+  margin: 25px 0;
+  width: 70px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 255, 0, 0.6);
+}
+
+.topTitle .topTitlebox #cont {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.scrollDown {
+  width: 100vw;
+  height: 50px;
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollDownIcon {
+  display: block;
+  position: absolute;
+  border-right: 3px solid;
+  border-top: 3px solid;
+  border-color: rgba(253, 228, 227, 0.9);
+  border-radius: 2px;
+  box-sizing: unset;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  transform: rotate(135deg);
+}
+
+/* 此为侧边列表 */
+.sideListbox {
+  position: relative;
+  top: 0;
+  width: 260px;
+  height: 36%;
+  border-color: #fff;
+  z-index: 3;
+  margin: 0 auto;
+  animation: move 1s;
+}
+
+.sideList {
+  display: block;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.dividingLine {
+  width: 100%-60px;
+  height: 1px;
+  margin: 15px 30px;
+  background-color: #c8c3be;
+}
+
+.CurrentColorSystem {
+  float: right;
+}
+
+.sideListboxMark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.sideList5 {
+  display: block;
+}
+
+.sideList6 {
+  visibility: hidden;
+  transform: translateY(-51px);
+}
+
+.DarkColorMask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+/* 返回顶部 */
+.backToTop {
+  position: fixed;
+  right: 3.5%;
+  bottom: 2%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.backToTop .backJT {
+  display: block;
+  position: absolute;
+  border-right: 3px solid;
+  border-top: 3px solid;
+  border-color: rgba(0, 0, 0, 1);
+  border-radius: 2px;
+  box-sizing: unset;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  transform: rotate(-43deg);
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.backToTop .backTEXT {
+  font-size: 16px;
+  display: none;
+  position: relative;
+  top: 1px;
+  left: 3px;
+}
+
+.backToTop:hover .backJT {
+  display: none;
+}
+
+.backToTop:hover .backTEXT {
+  display: block;
+}
+
+/* 图片反色修复 */
+.inverseRepair {
+  filter: invert(1);
+}
+
+/* 用户事件元素样式  毛玻璃效果 */
+.Alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 100px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: none;
+  color: #66ff66;
+}
