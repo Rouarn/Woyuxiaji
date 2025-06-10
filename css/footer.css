@@ -34,6 +34,9 @@ footer div a {
 footer .copyright {
   position: relative;
 }
+footer .copyright .legalText {
+  padding: 0;
+}
 footer .copyright .legalText .beian {
   position: relative;
   right: 30px;
