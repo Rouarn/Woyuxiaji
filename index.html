@@ -65,9 +65,7 @@
             <hr class="dividingLine" />
             <a class="sideList sideList5" id="sideList5" href="javascript:;"
               >夏季
-              <span class="CurrentColorSystem" id="CurrentColorSystem"
-                >浅色</span
-              >
+              <span class="CurrentColorSystem" id="CurrentColorSystem">浅色</span>
             </a>
             <a class="sideList sideList6" id="sideList6" href="javascript:;"
               >夏季
@@ -173,11 +171,7 @@
               <p class="workLinkCat">全平台 线上应用</p>
             </div>
           </a>
-          <a
-            href="http://inis.ms.xinlian.pub/"
-            target="_blank"
-            class="workLink"
-          >
+          <a href="http://inis.ms.xinlian.pub/" target="_blank" class="workLink">
             <div class="workLinkPic" id="workLinkPic5"></div>
             <div class="workLinkText">
               <p class="workLinkTitle">我与夏季-inis博客系统前台</p>
@@ -209,11 +203,7 @@
               <p class="workLinkCat">全平台 线上应用</p>
             </div>
           </a>
-          <a
-            href="https://gitee.com/woyuxiaji"
-            target="_blank"
-            class="workLink"
-          >
+          <a href="https://gitee.com/woyuxiaji" target="_blank" class="workLink">
             <div class="workLinkPic" id="workLinkPic9"></div>
             <div class="workLinkText">
               <p class="workLinkTitle">我与夏季-Gitee仓库</p>
@@ -298,9 +288,7 @@
           <br />
           <a href="#" target="_blank">不如与我在这终末的哀歌下共舞到最后吧</a>
           <br />
-          <a href="#" target="_blank"
-            >经一场大梦，梦中见满眼山花如翡，如见故人，喜不自胜。</a
-          >
+          <a href="#" target="_blank">经一场大梦，梦中见满眼山花如翡，如见故人，喜不自胜。</a>
         </div>
         <div class="footbox">
           <p>与我联系</p>
@@ -308,9 +296,7 @@
           <br />
           <a href="https://weibo.com/7269276678" target="_blank">我的微博</a>
           <br />
-          <a href="https://space.bilibili.com/340928373" target="_blank">
-            我的哔哩哔哩频道
-          </a>
+          <a href="https://space.bilibili.com/340928373" target="_blank"> 我的哔哩哔哩频道 </a>
           <br />
           <!-- <a id="linkDonate" href="#">我与夏季</a> -->
         </div>
@@ -319,9 +305,7 @@
           <div class="legalText">
             <a id="linkCopyright">版权声明</a>
             <br />
-            <a href="https://beian.miit.gov.cn/" target="_blank">
-              豫ICP备2024084155号-3
-            </a>
+            <a href="https://beian.miit.gov.cn/" target="_blank"> 豫ICP备2024084155号-3 </a>
             <br />
             <!-- <span class="beian">
               <img src="img/beian.png" />
@@ -407,28 +391,38 @@
     <!-- 用户事件弹出元素 -->
     <div class="Alert"></div>
 
-    <!-- JS    ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ -->
-
-    <!-- 引入jquery -->
-    <script src="./js/jquery.min.js"></script>
-    <!-- 首页 -->
-    <script src="./js/style.js"></script>
-    <!-- 关于 -->
-    <script src="./js/aboutMe.js"></script>
-    <!-- 导航栏 -->
-    <script src="./js/navbar.js"></script>
-    <!-- 底部 -->
-    <script src="./js/footer.js"></script>
-    <!-- 双色右键菜单 -->
-    <script src="js/RCMenu.js"></script>
-    <!-- 随机背景 -->
-    <!-- <script src="js/RandomBg.js"></script> -->
-    <!-- 樱花飘落 -->
-    <script src="./js/SakuraDrops.js"></script>
-    <!-- WOW.js -->
-    <script src="./js/wow.min.js"></script>
+    <!-- 引入 jQuery（CDN + 本地回退） -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      new WOW().init();
+      if (!window.jQuery) {
+        var s = document.createElement('script');
+        s.src = './js/jquery.min.js';
+        document.head.appendChild(s);
+      }
     </script>
+    <!-- jQuery 插件 -->
+    <script src="./js/plugins/themeToggle.js" defer></script>
+    <script src="./js/plugins/contextMenu.js" defer></script>
+    <script src="./js/plugins/clipboardGuard.js" defer></script>
+    <!-- 首页 -->
+    <script src="./js/style.js" defer></script>
+    <!-- 关于 -->
+    <script src="./js/aboutMe.js" defer></script>
+    <!-- 导航栏 -->
+    <script src="./js/navbar.js" defer></script>
+    <!-- 底部 -->
+    <script src="./js/footer.js" defer></script>
+    <!-- 双色右键菜单 -->
+    <script src="js/rcMenu.js" defer></script>
+    <!-- 樱花飘落 -->
+    <script src="./js/sakuraDrops.js" defer></script>
+    <!-- WOW.js -->
+    <script src="./js/wow.min.js" defer></script>
+    <!-- 入口初始化 -->
+    <script src="./js/init/bootstrap.js" defer></script>
   </body>
 </html>
